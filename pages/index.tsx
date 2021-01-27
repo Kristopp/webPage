@@ -1,16 +1,9 @@
-import Head from 'next/head'
-import Header from '../components/header'
+import Page from "@layouts/page"
+
+
 
 export default function Home() {
   return (
-    <div>
-      <Head>
-        <title>Create Next App</title>
-      </Head>
-      <Header></Header>
-      <main>
-    
-      </main>
-    </div>
-  )
+    <Page />
+  );
 }

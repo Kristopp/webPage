@@ -1,14 +1,14 @@
 import { css } from "@emotion/react";
+
 const container = css`
-  min-height: 100vh;
-  padding: 1rem 0;
+  background-color: rgb(0, 0, 0);
+  min-height: 10vh;
+  padding: 0.5rem;
   display: grid;
-place-items: center;
 `;
 
 const title = css`
-  font-size: 4rem;
-  text-align: center;
+  background-color: rgb(0, 0, 0);
 `;
 
-export { container, title }
+export { container, title };

@@ -1,10 +1,11 @@
-import { container, title } from './styles'
+import { container, title } from "./styles";
+import Logo from "@components/logos";
 
-const header = () => ( 
-    <header css={container}>
-    <h1 css={title}>helelo</h1> 
-
+const Header = () => (
+  <header css={container}>
+    <h1 css={title}><Logo />
+    </h1>
   </header>
-)
+);
 
-export default header
+export default Header;
