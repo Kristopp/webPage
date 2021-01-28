@@ -4,6 +4,9 @@ import Page from "@layouts/page"
 
 export default function Home() {
   return (
-    <Page />
+    <Page meta={{
+      title: 'Hello Devlog',
+      description: 'Home'
+    }}/>
   );
 }

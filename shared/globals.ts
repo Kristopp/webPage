@@ -10,7 +10,7 @@ export const globalStyles = css`
     --color-accent: rgb(4, 64, 100);
     --reading-width: 60ch;
     --white: #fff;
-    --text-color: white;
+    --text-color: #fff;
   }
 
   html,
