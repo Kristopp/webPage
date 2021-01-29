@@ -1,11 +1,11 @@
-import { css } from "@emotion/react"
+import { css } from "@emotion/react";
 
-const navigationStyles = css`
+export const leakedList = css`
 width: 90%;
 max-width: var(--page-width);
 color: var(--text-color);
-margin:  -17px auto;
-top: -1em;
+margin:  0 auto;
+top: -2em;
 padding: 0.5em 0.5em;
 position: relative;
 display: flex;
@@ -18,7 +18,4 @@ a:hover,
 a:focus { 
     color: var(--color-accent)
 }
-
-`
-
-export { navigationStyles }
+`;

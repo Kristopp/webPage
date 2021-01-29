@@ -37,7 +37,7 @@ const footer = css`
 
 const About = () => (
   <Page meta={{
-    title: 'About :: Hello Devlog',
+    title: 'About',
     description: 'Penguin'
   }}>
     <section css={header}>

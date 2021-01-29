@@ -1,18 +1,17 @@
 import Link from "next/link";
 import { BiBulb as AboutNav } from "react-icons/bi";
-import { navigationStyles } from "./styles";
-
+import { leakedList } from "@shared/reusable-styles";
 
 export const Navigation = () => {
   return (
-    <nav css={navigationStyles}>
+    <nav css={leakedList}>
       <Link href="/">
         <a aria-label="back to home">
           <AboutNav />
         </a>
       </Link>
       <Link href="/about">
-          <a>about</a>
+        <a>about</a>
       </Link>
     </nav>
   );
