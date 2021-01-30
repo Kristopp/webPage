@@ -1,9 +1,31 @@
+
 import Page from "@layouts/page"
+import { InferGetStaticPropsType } from "next";
+import { getPosts } from '@shared/get-posts'
 
 
 
-export default function Home() {
+export default function Home({ posts }: InferGetStaticPropsType<typeof getStaticProps>) {
   return (
-    <Page />
+    <Page>
+      <ul>
+        {posts.map((post) => ( 
+          <li key={post.slug}>{post.slug}</li>
+        ))}
+      </ul>
+    </Page>
   );
+}
+
+export const getStaticProps = async () => { 
+  const posts = await getPosts('.posts/')
+  const allMdx = posts.map(({slug, frontMatter}) => ({ 
+    slug,
+    frontMatter,
+  }))
+  return { 
+    props: { 
+      post: allMdx
+    }
+  }
 }

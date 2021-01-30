@@ -2,6 +2,7 @@ import { css } from '@emotion/react'
 
 export const globalStyles = css`
   :root {
+
     --page-width: 800px;
     --page-background: rgb(40, 40, 40);
     --page-text: #fff;
@@ -15,7 +16,7 @@ export const globalStyles = css`
 
   html,
   body {
-    max-height: 100vh;
+height: 100vh;
     padding: 0;
     margin: 0;
     font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
