@@ -1,15 +1,14 @@
-
-import Page from "@layouts/page"
+import Page from "@layouts/page";
 import { InferGetStaticPropsType } from "next";
-import { getPosts } from '@shared/get-posts'
+import { getPosts } from "@shared/get-posts";
 
-
-
-export default function Home({ posts }: InferGetStaticPropsType<typeof getStaticProps>) {
+export default function Home({
+  posts,
+}: InferGetStaticPropsType<typeof getStaticProps>) {
   return (
     <Page>
       <ul>
-        {posts.map((post) => ( 
+        {posts.map((post) => (
           <li key={post.slug}>{post.slug}</li>
         ))}
       </ul>
@@ -17,15 +16,15 @@ export default function Home({ posts }: InferGetStaticPropsType<typeof getStatic
   );
 }
 
-export const getStaticProps = async () => { 
-  const posts = await getPosts('.posts/')
-  const allMdx = posts.map(({slug, frontMatter}) => ({ 
+export const getStaticProps = async () => {
+  const posts = await getPosts("./posts");
+  const allMdx = posts.map(({ slug, frontMatter }) => ({
     slug,
     frontMatter,
-  }))
-  return { 
-    props: { 
-      post: allMdx
-    }
-  }
-}
+  }));
+  return {
+    props: {
+      posts: allMdx,
+    },
+  };
+};
