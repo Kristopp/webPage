@@ -1,4 +1,5 @@
 import Page from "@layouts/page";
+import Link from "next/link";
 import { InferGetStaticPropsType } from "next";
 import { getPosts } from "@shared/get-posts";
 
@@ -9,7 +10,11 @@ export default function Home({
     <Page>
       <ul>
         {posts.map((post) => (
-          <li key={post.slug}>{post.slug}</li>
+          <li key={post.slug}>
+            <Link href={`/${post.slug}`}>
+              <a>{post.frontMatter.title}</a>
+            </Link>
+          </li>
         ))}
       </ul>
     </Page>
@@ -17,7 +22,7 @@ export default function Home({
 }
 
 export const getStaticProps = async () => {
-  const posts = await getPosts("./posts");
+  const posts = await getPosts('./posts');
   const allMdx = posts.map(({ slug, frontMatter }) => ({
     slug,
     frontMatter,

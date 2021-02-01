@@ -1,16 +1,16 @@
 import { GetStaticPaths, GetStaticPropsContext, InferGetStaticPropsType } from "next";
-import { getPosts } from "@shared/get-posts";
+import { FormatedPost, getPosts } from "@shared/get-posts";
 import hydrate from 'next-mdx-remote/hydrate'
 
 export default function Post({ 
-    mdxContnent,
+    mdxContent,
     frontMatter
 }: InferGetStaticPropsType<typeof getStaticProps>) {
-    const content = hydrate(mdxContnent, { components: { }})
+    const content = hydrate(mdxContent, { components: { }})
   return (
     <>
     <header>
-        <h1>{frontMatter.tittle}</h1>
+        <h1>{frontMatter.title}</h1>
     </header>
       <article>{content}</article>
     </>
@@ -18,19 +18,14 @@ export default function Post({
 }
 
 export const getStaticPaths: GetStaticPaths = async () => {
-  const posts = await getPosts("./posts");
-
+  const posts = await getPosts('./posts');
   const paths = posts.map(({ slug }) => ({
     params: {
       slug,
     },
   }));
   return {
-    paths: [
-      {
-        params: {},
-      },
-    ],
+    paths,
     fallback: false,
   };
 };
@@ -42,7 +37,7 @@ const posts = await getPosts('./posts')
 const { mdx, frontMatter } = posts.find(({slug: postSlug }) => postSlug === routeSlug) as FormatedPost 
 return { 
     props: { 
-        mdxContnent: mdx,
+      mdxContent: mdx,
         frontMatter
     }
 }
