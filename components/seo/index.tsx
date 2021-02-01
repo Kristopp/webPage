@@ -4,9 +4,10 @@ import { metadata as siteMeta } from "config";
 export type SEOProps = {
   title?: string;
   description?: string;
+  isBlogPost?: boolean
 };
-
-const SEO = ({ title, description }: SEOProps) => {
+//import props
+const SEO = ({ title, description, isBlogPost = false }: SEOProps) => {
   const pageTitle = title
     ? `${title} :: ${siteMeta.siteName}`
     : siteMeta.siteName;
@@ -19,7 +20,7 @@ const SEO = ({ title, description }: SEOProps) => {
       <meta name="description" content={pageDescription} />
       <meta name="og::title" content={title} />
       <meta name="og:description" content={pageDescription} />
-      <meta name="og:type" content="website" />
+      <meta name="og:type" content={isBlogPost ? 'article' : 'website'} />
     </Head>
   );
 };
