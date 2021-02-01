@@ -29,8 +29,6 @@ readdirSync(source).map((name) => ({
   //we remove extension of that string
   slug: name.replace(new RegExp(path.extname(name) + '$'), ''),
 })); 
- console.log(getDirData) 
-
 const formatPostList = async ({ filepath, slug }: Postfile) => {
   const mdxSource = await fs.readFile(filepath);
   const { content, data: frontMatter } = matter(mdxSource);

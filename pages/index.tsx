@@ -1,6 +1,7 @@
 import Page from "@layouts/page";
 import Link from "next/link";
 import { InferGetStaticPropsType } from "next";
+import { POSTS_DIR } from "config"
 import { getPosts } from "@shared/get-posts";
 
 export default function Home({
@@ -22,7 +23,7 @@ export default function Home({
 }
 
 export const getStaticProps = async () => {
-  const posts = await getPosts('./posts');
+  const posts = await getPosts(POSTS_DIR);
   const allMdx = posts.map(({ slug, frontMatter }) => ({
     slug,
     frontMatter,
