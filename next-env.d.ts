@@ -2,7 +2,7 @@
 /// <reference types="next/types/global" />
 /// <reference types="@emotion/react/types/css-prop" />
 
-type RenderToStringParams = { 
+/* type RenderToStringParams = { 
     components?: object
     mdxOptions?: object
     scope?: object
@@ -23,4 +23,4 @@ declare module 'next-mdx-remote/render-to-string' {
 declare module 'next-mdx-reote/hydrate' { 
     function hydrate(mdxObject: object, components?: Hydrateparams): string
     export default hydrate
-}
+} */

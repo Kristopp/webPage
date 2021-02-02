@@ -28,6 +28,7 @@ export type FormatedPost = {
 const getDirData = (source: string): Postfile[] =>
 readdirSync(source).map((name) => ({
   filepath: `${source}/${name}`,
+ 
   //we remove extension of that string
   slug: name.replace(new RegExp(path.extname(name) + '$'), ''),
 })); 

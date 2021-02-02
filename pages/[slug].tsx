@@ -12,7 +12,8 @@ export default function Post({
   mdxContent,
   frontMatter,
 }: InferGetStaticPropsType<typeof getStaticProps>) {
-  const content = hydrate(mdxContent, { components: {} });
+  const content = hydrate(mdxContent, { components: {} })
+ 
   return (
     <PostsLayout frontMatter={frontMatter}>
       <header>
@@ -42,7 +43,7 @@ export const getStaticProps = async ({ params }: GetStaticPropsContext) => {
 
   const { mdx, frontMatter } = posts.find(
     ({ slug: postSlug }) => postSlug === routeSlug
-  ) as FormatedPost;
+    ) as FormatedPost;
   return {
     props: {
       mdxContent: mdx,

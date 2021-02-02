@@ -2,6 +2,7 @@ import Page from "@layouts/page";
 import Link from "next/link";
 import { InferGetStaticPropsType } from "next";
 import { POSTS_DIR } from "config"
+import Bio from "@components/bio-comp"
 import { getPosts } from "@shared/get-posts";
 
 export default function Home({
@@ -9,6 +10,7 @@ export default function Home({
 }: InferGetStaticPropsType<typeof getStaticProps>) {
   return (
     <Page>
+      <Bio />
       <ul>
         {posts.map((post) => (
           <li key={post.slug}>
