@@ -2,7 +2,7 @@ import { css } from "@emotion/react";
 
 const container = css`
   background-color: var(--background-accent);
-   min-height: 40vh; 
+   min-height: 20vh; 
   padding: 0.5rem;
   display: grid;
 `;

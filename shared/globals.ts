@@ -14,7 +14,6 @@ export const globalStyles = css`
 
   html,
   body {
-    border: 10px black solid;
     height: 100%;
     padding: 10;
     margin: 0;

@@ -1,7 +1,9 @@
-import { css } from "@emotion/react"
+import { css } from "@emotion/react";
 
 const mainContainer = css`
-/* max-height: 100%; */
-`
+  min-height: 100vh;
+  display: grid;
+  grid-template-rows: auto auto 1fr auto;
+`;
 
-export { mainContainer }
+export { mainContainer };

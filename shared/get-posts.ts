@@ -11,8 +11,8 @@ type Postfile = {
 export type FrontMatter = {
   date: string;
   title: string;
-  path: string
-  description: string
+  path: string;
+  description: string;
 };
 
 export type FormatedPost = {
@@ -26,15 +26,16 @@ export type FormatedPost = {
 //we give directory of posts and it returns arrray of posts
 //recives source string and output os
 const getDirData = (source: string): Postfile[] =>
-readdirSync(source).map((name) => ({
-  filepath: `${source}/${name}`,
- 
-  //we remove extension of that string
-  slug: name.replace(new RegExp(path.extname(name) + '$'), ''),
-})); 
+  readdirSync(source).map((name) => ({
+    filepath: `${source}/${name}`,
+
+    //we remove extension of that string
+    slug: name.replace(new RegExp(path.extname(name) + "$"), ""),
+  }));
 const formatPostList = async ({ filepath, slug }: Postfile) => {
   const mdxSource = await fs.readFile(filepath);
-  const { content, data: frontMatter } = matter(mdxSource);
+  const { content, data } = matter(mdxSource);
+  const frontMatter = data as FrontMatter;
 
   const mdx = await renderToString(content, {
     components: {},

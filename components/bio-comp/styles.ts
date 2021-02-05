@@ -13,7 +13,7 @@ const wrapper = css`
 `;
 
 const profilePic = css`
-  border-radius: 40%/10%;
+  /* border-radius: 40%/10%; */
 `;
 
 const text = css`

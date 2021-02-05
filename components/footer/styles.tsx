@@ -2,10 +2,13 @@ import { css } from "@emotion/react"
 
 const footer = css`
 background-color: var(--background-accent);
-margin-top: 10ch;
-display: flex;
-flex-direction: column;
-justify-content: center;
+position: absolute;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  padding: 1rem;
+text-align: center;
+
 `
 const copyrightLogo =css`
 

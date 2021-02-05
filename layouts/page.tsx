@@ -3,7 +3,7 @@ import Navigation from "@components/navigation";
 import SEO, { SEOProps } from "@components/seo";
 import { ReactNode } from "react";
 import Footer from "@components/footer/footer";
-import { mainContainer } from "./styles/pageStyles"
+import { mainContainer } from "./styles/pageStyles";
 
 //we define pageProps
 type PageProps = {
@@ -15,12 +15,12 @@ const Page = ({ meta, children }: PageProps) => {
   return (
     <div>
       <SEO {...meta} />
-        <Header />
       <main css={mainContainer}>
+        <Header />
         <Navigation />
         {children}
+        <Footer />
       </main>
-      <Footer />
     </div>
   );
 };
